@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Página protegida</title>
-    <link rel="stylesheet" href="estilo.css">
+    <center><title>Página protegida</title>
+    <link rel="stylesheet" href="estilo.css"></center>
 </head>
 <body>
     <div class="conteiner">
@@ -15,35 +15,27 @@
             <input type="submit" value="Entrar" class="botao-entrar">
         </form>
     </div>
-    <div id="pagina-video" style="display:none">
-        <center> 
-      <h2>Vídeo</h2>
-        <video width="320" height="240" controls class="video-player"; autoplay;>
-            <source src="https://cdn.discordapp.com/attachments/982000789281198150/1062888489508671579/SPOILER_focadasso.mp4" type="video/mp4">
-            Seu navegador não suporta vídeos.
-        </video> </center>
+    <center><div id="pagina-video" style="display:none">
+        <video width="320" height="240" controls autoplay class="video-player">
+            <source src="https://cdn.discordapp.com/attachments/828637444194435096/1062924070120849488/sXuZ4jGQDFKTr1JF.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos. 
+        </video>
     </div>
     <script>
-        var usuarios = [{usuario:"yuke", senha:"bote"}, {usuario:"yuke", senha:"teste"}];
         var formLogin = document.querySelector("#login-form");
         formLogin.addEventListener("submit", function(event) {
             event.preventDefault();
             var usuario = formLogin.querySelector("#usuario").value;
             var senha = formLogin.querySelector("#senha").value;
-            var autenticado = false;
-            for(var i = 0; i < usuarios.length; i++){
-                if (usuarios[i].usuario == usuario && usuarios[i].senha == senha) {
-autenticado = true;
-break;
-}
-}
-if (autenticado) {
-document.querySelector("#pagina-video").style.display = "block";
-} else {
-alert("Usuário ou senha incorretos ou você não tem o dono.");
-}
-});
-</script>
-
+            // Adicione aqui a lógica de autenticação de usuário e senha
+            // e valide se as credenciais fornecidas estão corretas
+            if (usuario == "admin" && senha == "1234") {
+                document.querySelector("#pagina-video").style.display = "block";
+                formLogin.style.display = "none";
+            } else {
+                alert("Usuário ou senha incorretos.");
+            }
+        });
+    </script>
 </body>
 </html>
