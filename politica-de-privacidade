@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Política de Privacidade do meu bot de verificação no Discord</title>
+    <style>
+      /* CSS para estilizar a página */
+      body {
+        background-color: black;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      /* CSS para tabelas */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      td, th {
+        border: 1px solid gray;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </</head>
+  <body>
+    <h1>Política de Privacidade do meu bot de verificação no Discord</h1>
+    <p>Nosso bot de verificação no Discord coleta apenas informações essenciais para o funcionamento adequado do bot, e nenhuma informação pessoal é armazenada. Essas informações incluem:</p>
+    <ul>
+      <li>ID do usuário</li>
+      <li>Nome de usuário</li>
+      <li>Informações de comandos usados</li>
+       <li>Avatar do usuário</li>
+        <li>Saber em quais servidores o bot tá</li>
+    </ul>
+    <h2></h2>
+    <p></p>
+    <table id="server-table">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="server-list">
+        <!-- Lista de servidores será carregada dinamicamente -->
+      </tbody>
+    </table>
+    
+        
+    </script>
+  </body>
+</html>
