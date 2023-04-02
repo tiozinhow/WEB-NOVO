@@ -1,1 +1,41 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <center><title>Página protegida</title>
+    <link rel="stylesheet" href="estilo.css"></center>
+</head>
+<body>
+    <div class="conteiner">
+        <center><h1>Página protegida</h1>
+        <form id="login-form">
+            <label for="usuario">Usuário:</label>
+            <input type="text" id="usuario" name="usuario" class="input-form">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" class="input-form">
+            <input type="submit" value="Entrar" class="botao-entrar"></center>
+        </form>
+    </div>
+    <center><div id="pagina-video" style="display:none">
+        <video width="320" height="240" controls autoplay class="video-player">
+            <source src="https://cdn.discordapp.com/attachments/828637444194435096/1062924070120849488/sXuZ4jGQDFKTr1JF.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos. 
+        </video>
+    </div>
+    <script>
+        var formLogin = document.querySelector("#login-form");
+        formLogin.addEventListener("submit", function(event) {
+            event.preventDefault();
+            var usuario = formLogin.querySelector("#usuario").value;
+            var senha = formLogin.querySelector("#senha").value;
+            // Adicione aqui a lógica de autenticação de usuário e senha
+            // e valide se as credenciais fornecidas estão corretas
+            if (usuario == "admin" && senha == "1234") {
+                document.querySelector("#pagina-video").style.display = "block";
+                formLogin.style.display = "none";
+            } else {
+                alert("Usuário ou senha incorretos.");
+            }
+        });
+    </script>
+</body>
+</html>
