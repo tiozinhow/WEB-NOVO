@@ -1,75 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bot de Verificação</title>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-        font-family: Arial, sans-serif;
-      }
-      
-      #container {
-        margin: 0 auto;
-        max-width: 800px;
-        text-align: center;
-        padding: 50px;
-      }
-      
-      h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-      
-      p {
-        font-size: 24px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <h1>Bot de Verificação</h1>
-      <p>Lamentamos informar que nosso bot de verificação falhou. No entanto, estamos trabalhando em um novo tipo de bot para o Discord. Em breve, estaremos de volta para oferecer a melhor experiência possível em nosso servidor. Agradecemos sua paciência.</p>
-      <a href="https://discord.gg/w6WES2HSZw" target="_blank"><button>Entrar no servidor do Discord</button></a>
-</div>
-      <center> <p id="countdown"></p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Bot de Vendas Automáticas</title>
+    <meta name="description" content="Um bot de vendas automáticas para Discord.">
+    <meta name="theme-color" content="#BD1811">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body style="background-color: #f8f8f8;">
+    <header style="text-align: center;margin: 30px;">
+        <img src="https://media.discordapp.net/attachments/921508536993857586/924487093726642216/2021-12-22-20-16-57.png?width=464&height=427" width="120" height="120" style="margin-bottom: 15px;">
+        <h1 style="color: #212121;font-weight: 400;font-size: 36px;">Bot de Vendas Automáticas</h1>
+    </header>
+    <div style="text-align: center;">
+        <a href="https://discord.com/oauth2/authorize?client_id=821757563108327436&permissions=2416307280&scope=bot%20applications.commands" class="btn-primary" style="padding: 10px 25px;border-radius: 20px;text-transform: uppercase;font-weight: 500;margin-right: 20px;background-color: #BD1811;color: #fff;">Convite</a>
+        <a href="#features" class="btn-secondary" style="padding: 10px 25px;border-radius: 20px;text-transform: uppercase;font-weight: 500;background-color: #fff;color: #BD1811;border: 2px solid #BD1811;">Recursos</a>
     </div>
-      <body onload="startCountdown()">
-    <div id="container">
-      <h1></h1>
-      <p id="countdown"></p> </center>
-      
-    <script>
-      const countdownElement = document.getElementById('countdown');
-      const expirationTime = localStorage.getItem('expirationTime');
-      
-      if (expirationTime) {
-        countdown();
-      } else {
-        localStorage.setItem('expirationTime', new Date(Date.now() + 2 * 24 * 60 * 60 * 1000 + 59 * 60 * 1000).getTime());
-        countdown();
-      }
-      
-      function countdown() {
-        const now = new Date().getTime();
-        const remainingTime = localStorage.getItem('expirationTime') - now;
-        
-        if (remainingTime <= 0) {
-          countdownElement.innerHTML = "Tempo esgotado!";
-          localStorage.removeItem('expirationTime');
-        } else {
-          const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-          const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-          
-          countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-          
-          setTimeout(() => {
-            countdown();
-          }, 1000);
-        }
-      }
-    </script>
-  </body>
+    <section id="features" style="margin: 30px;">
+        <h2 style="color: #212121;font-weight: 400;font-size: 24px;text-align: center;">Recursos</h2>
+        <div class="features-grid" style="display: grid;grid-template-columns: 1fr 1fr;grid-gap: 30px;margin-top: 30px;">
+            <div class="feature-item" style="background-color: #fff;padding: 30px;border-radius: 10px;box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);">
+                <i class="fas fa-check-circle fa-3x" style="color: #BD1811;margin-bottom: 15px;"></i>
+                <h3 style="color: #212121;font-weight: 500;font-size: 18px;margin-bottom: 15px;">Automação de Vendas</h3>
+                <p style="color: #757575;font-weight: 400;font-size: 16px;">Nosso bot automatiza o processo de vendas para você economizar tempo e dinheiro.</p>
+            </div>
+        </div>
+    </section>
+</body>
 </html>
