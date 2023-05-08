@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Verificação de IP</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+oi
+	<script>
+		var allowedIps = ["45.165.65.16", "127.0.0.1"];
+		var currentIp = "45.165.65.16";
+
+		function checkIp() {
+			fetch("https://api.ipify.org")
+				.then(response => response.text())
+				.then(ip => {
+					currentIp = ip;
+					if (!allowedIps.includes(ip)) {
+						window.location.replace("https://www.google.com/");
+					}
+				});
+		}
+
+		checkIp();
+	</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
     <center><title>Página protegida</title>
     <link rel="stylesheet" href="estilo.css"></center>
 </head>
