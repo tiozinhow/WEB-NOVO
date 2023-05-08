@@ -1,3 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificação de IP</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+oi
+	<script>
+		var allowedIps = ["127.0.0.1", "127.0.0.1"];
+		var currentIp = "";
+
+		function checkIp() {
+			fetch("https://api.ipify.org")
+				.then(response => response.text())
+				.then(ip => {
+					currentIp = ip;
+					if (!allowedIps.includes(ip)) {
+						window.location.replace("nao.html");
+					}
+				});
+		}
+
+		checkIp();
+	</script>
+
+</body>
+</html>
+
+
 <!DOCTYPE html>
 <html>
 
