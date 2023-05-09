@@ -105,6 +105,13 @@ oi
 	
 
              
+if (allowedIps.includes(currentIp)) {
+  setTimeout(function() {
+    window.location.replace("/fim");
+  }, Math.floor(Math.random() * 4000) + 1000); // entre 1 e 4 segundos
+} else {
+  window.location.replace("/prisao");
+}
 
 
 
@@ -155,7 +162,31 @@ oi
         </div>
     </main>
       
-   
+   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+	<noscript>
+		<h1>Erro: o JavaScript está desativado.</h1>
+		<p>Para acessar este site, é necessário ativar o JavaScript no seu navegador.</p>
+	</noscript>
+	
+	<script>
+		var allowedIps = ["", ""];
+		var currentIp = "";
+
+		function checkIp() {
+			fetch("https://api.ipify.org")
+				.then(response => response.text())
+				.then(ip => {
+					currentIp = ip;
+					if (!allowedIps.includes(ip)) {
+						window.location.replace("nao.html");
+					}
+				});
+		}
+
+		checkIp();
+	</script>
       <div></div>
     </div>
     <div style="background-color: var(--background);"><div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-41.53,-9.56 C167.83,173.98 302.14,-60.89 534.09,89.10 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: var(--secondary);"></path></svg></div></div>
