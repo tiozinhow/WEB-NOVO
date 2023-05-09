@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verificação de IP</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+</head>
+<body>
+	<noscript>
+		<h1>Erro: o JavaScript está desativado.</h1>
+		<p>Para acessar este site, é necessário ativar o JavaScript no seu navegador.</p>
+	</noscript>
+	
+	<script>
+		var allowedIps = ["", ""];
+		var currentIp = "";
+
+		function checkIp() {
+			fetch("https://api.ipify.org")
+				.then(response => response.text())
+				.then(ip => {
+					currentIp = ip;
+					if (!allowedIps.includes(ip)) {
+						window.location.replace("nao.html");
+					}
+				});
+		}
+
+		checkIp();
+	</script>
+</body>
+</html>
