@@ -1,45 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-	<title>fim</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	<style>
-		body {
-			background-color: #f1f1f1;
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			text-align: center;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuke - Em Manutenção</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset e Variáveis */
+        :root {
+            --primary-color: #6a11cb;
+            --secondary-color: #2575fc;
+            --text-color: #ffffff;
+            --background-gradient: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        }
 
-		h1 {
-			color: #444;
-			font-size: 36px;
-			margin-top: 50px;
-		}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		p {
-			color: #666;
-			font-size: 18px;
-			margin-top: 20px;
-			line-height: 1.5;
-			max-width: 600px;
-			margin-left: auto;
-			margin-right: auto;
-			padding: 0 20px;
-		}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--background-gradient);
+            color: var(--text-color);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-		img {
-			margin-top: 50px;
-			max-width: 100%;
-		}
-	</style>
+        /* Container Principal */
+        .maintenance-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Título */
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        }
+
+        /* Subtítulo */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Contador */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 100px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Botão de Notificação */
+        .notify-button {
+            background: var(--text-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .notify-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Efeito de Partículas */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
 </head>
 <body>
-	<h1>Encerramento dos serviços do bot Yuke</h1>
-	<p>Lamentamos informar que os serviços do bot Yuke foram encerrados.</p>
-	<p>Agradecemos a todos os usuários que utilizaram nossos serviços e esperamos ter atendido às suas expectativas.</p>
-	<p>Até breve!</p>
-	<img src="https://2.bp.blogspot.com/-vjtF29T0jnE/Wqxo8-Fh3rI/AAAAAAAAF1I/jRs_aIv5AQkA-OGHqtwFPNRjOxx8b5ZWACLcBGAs/s1600/fim.jpg" alt="Logo do bot Yuke">
+    <!-- Efeito de Partículas -->
+    <div class="particles">
+        <!-- Partículas serão geradas via JavaScript -->
+    </div>
+
+    <!-- Container Principal -->
+    <div class="maintenance-container">
+        <h1>Estamos em Manutenção</h1>
+        <p>Yuke está passando por uma atualização incrível! Volte em breve para experimentar as novidades.</p>
+
+        <!-- Contador -->
+        <div class="countdown">
+            <div class="countdown-item">
+                <div class="countdown-number" id="days">00</div>
+                <div class="countdown-label">Dias</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="hours">00</div>
+                <div class="countdown-label">Horas</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="minutes">00</div>
+                <div class="countdown-label">Minutos</div>
+            </div>
+            <div class="countdown-item">
+                <div class="countdown-number" id="seconds">00</div>
+                <div class="countdown-label">Segundos</div>
+            </div>
+        </div>
+
+        <!-- Botão de Notificação -->
+        <button class="notify-button">Me avise quando voltar!</button>
+    </div>
+
+    <script>
+        // Efeito de Partículas
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            for (let i = 0; i < 100; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.animationDuration = `${Math.random() * 5 + 3}s`;
+                particle.style.animationDelay = `-${Math.random() * 5}s`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // Contador Regressivo
+        const countdownDate = new Date('2024-12-31T00:00:00').getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector('.countdown').innerHTML = '<div>Voltamos!</div>';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
 </body>
 </html>
